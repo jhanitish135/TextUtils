@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 
 import Navbar from "./components/Navbar";
-import About from "./components/About";
+// import About from "./components/About";
 import Textform from "./components/Textform";
 import React, { useState } from 'react';
 import Alert from "./components/Alert";
@@ -48,7 +48,7 @@ function App() {
     <div className="container my-3">
       {/* <Switch> */}
             {/* <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route> */}
             {/* <Route exact path="/"> */}
             <Textform showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/>

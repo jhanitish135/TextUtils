@@ -1,29 +1,13 @@
-import React, {useState} from 'react'
-
-export default function About() {
-    const [myStyle, setMyStyle] = useState( {
-        color:'black',
-        backgroundColor:'white'
-    })
-    const [btntext, setbtntext] = useState('Enable Dark Mode')
-    const toggleStyle=()=>{
-        if(myStyle.color === 'black'){
-            setMyStyle({
-                color:'white',
-                backgroundColor:'black',
-                border:'1px solid white',
-                // borderBottom:'none' 
-            })
-            setbtntext('Enable Light Mode')
-        }
-        else{
-            setMyStyle({
-                color:'black',
-                backgroundColor:'white' 
-            })
-            setbtntext('Enable Dark Mode')
-        }
+import React from 'react'
+export default function About(props) {
+    // 
+    let myStyle={
+        color: props.mode==='dark'?'white':'black',
+        backgroungColor:props.mode==='dark'?'black':'white',
+        border: '2px solid' ,
+        bordeColor:props.mode==='dark'?'white':'black'
     }
+    
   
     return (
         
@@ -60,9 +44,6 @@ export default function About() {
                     <div className="accordion-body" style={myStyle}>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
                     </div>
                 </div>
-            </div>
-            <div className="container my-3">
-                <button type="button" className="btn btn-dark " onClick={toggleStyle}>{btntext}</button>
             </div>
             
         </div>
